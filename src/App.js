@@ -11,7 +11,7 @@ import Series from "./pages/Series/Series";
 function App() {
   return (
     <BrowserRouter>
-      <Header></Header>
+      <Header/>
       <div className="app">
         <Container>
           <Routes>

@@ -22,6 +22,7 @@ const Trending = () => {
     axios
       .request(options)
       .then(function (response) {
+        // console.log(response.data);
         console.log(response.data.results);
         setContent(response.data.results);
       })
@@ -39,10 +40,17 @@ const Trending = () => {
   return (
     <div>
       <span className="pageTitle">Trending</span>
-
+      
       <div className="trending">
         {content.map((element) => (
           <SingleContent
+            // Using both key and id simultaneously in a React component serves different purposes, despite them often being assigned the same value.
+            // key Prop
+            // Purpose: The key prop is used internally by React to track elements in a list and optimize re-renders. It helps React identify which items have changed, been added, or removed.
+            // Scope: The key prop is used only by React and is not accessible inside the component. It does not get passed to the component as a prop.
+            // id Prop
+            // Purpose: The id prop is used within your application and can be accessed inside the component. It can be used for various purposes, such as fetching data, identifying elements, handling events, etc.
+            // Scope: The id prop is passed to the component as a prop and can be used in the component's logic.
             key={element.id}
             id={element.id}
             name={element.title || element.name}

@@ -3,7 +3,7 @@ import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import { Badge } from "@mui/material";
 
-const SingleContent = ({ id, name, vote, media_type, poster, date }) => {
+const SingleContent = ({ name, vote, media_type, poster, date }) => {
   return (
     <div className="media">
       <Badge badgeContent={vote} color={vote > 7 ? "primary" : "secondary"} />
